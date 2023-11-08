@@ -1,0 +1,318 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+<!-- <HBox id="_IDGenHBox" justifyContent="End">
+      <Button id="_IDGenButto" icon="sap-icon://nav-back"  press="onBackButtonPress" />
+      </HBox> -->
+    <HBox id="_IDGenHBox1">
+        <VBox
+            id="_IDGenVBox1"
+            class="sapUiTinyMargin"
+        >
+            <Title
+                text=""
+                id="_IDGenTitle1"
+                level="H1"
+            />
+        </VBox>
+    </HBox>
+
+    <FlexBox
+        id="_IDGenFlexBox1"
+        width="100%"
+        justifyContent="Center"
+        alignItems="Center"
+        height="100%"
+    >
+        <VBox id="_IDGenVBox2">
+            <FlexBox
+                id="_IDGenFlexBox2"
+                justifyContent="Center"
+                class="sapUiSmallMargin"
+            >
+                <Label
+                    id="_IDGenLabel1"
+                    text="Employee Registration"
+                    design="Bold"
+                />
+            </FlexBox>
+
+            <HBox id="_IDGenHBox2">
+                <VBox
+                    id="_IDGenVBox3"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel2"
+                        text="Name"
+                        required="true"
+                    />
+
+                    <Input
+                        id="nameEmployee"
+                        width="250px"
+                        placeholder="Name"
+                        liveChange="onNameChange"
+                    />
+                </VBox>
+                <VBox
+                    id="_IDGenVBox5"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel4"
+                        text="Personal Email Id"
+                        required="true"
+                    />
+
+                    <Input
+                        id="pEmail"
+                        width="250px"
+                        placeholder="Email id"
+                        liveChange="onEmailchange"
+                    />
+                </VBox>
+            </HBox>
+
+            <HBox id="_IDGenHBox3">
+                <VBox
+                    id="_IDGenVBox6"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel5"
+                        text="Phone Number"
+                        required="true"
+                    />
+
+                    <Input
+                        id="phoneNumber"
+                        width="250px"
+                        placeholder="Phone Number"
+                        liveChange="onNumberChange"
+                    />
+                </VBox>
+                <VBox
+                    id="_IDGenVBox7"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel6"
+                        text="House Name"
+                       
+                    />
+
+                    <Input
+                        id="houseName"
+                        width="250px"
+                        placeholder="House Name"
+                        liveChange="onNameChange"
+                       
+                    />
+                </VBox>
+            </HBox>
+
+            <HBox id="_IDGenHBox4">
+                <VBox
+                    id="_IDGenVBox8"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel7"
+                        text="Street"
+                        
+                    />
+
+                    <Input
+                        id="street"
+                        width="250px"
+                        placeholder="Street"
+                       
+                        
+                    />
+                </VBox>
+                <VBox
+                    id="_IDGenVBox9"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel8"
+                        text=" Place"
+                     
+                    />
+
+                    <Input
+                        id="place"
+                        width="250px"
+                        placeholder="Place"
+                        liveChange="onNameChange"
+                    />
+                </VBox>
+            </HBox>
+
+            <HBox id="_IDGenHBox5">
+                <VBox
+                    id="_IDGenVBox11"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel10"
+                        text="District"
+                        required="true"
+                        
+                    />
+
+                    <Input
+                        id="district"
+                        width="250px"
+                        placeholder="District"
+                        liveChange="onNameChange"
+                    />
+                </VBox>
+
+                <VBox
+                    id="_IDGenVBox10"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel9"
+                        text="Pincode"
+                        required="true"
+                    />
+
+                    <Input
+                        id="pincode"
+                        width="250px"
+                        placeholder="Pincode"
+                        liveChange="onNumberChange"
+                    />
+                </VBox>
+            </HBox>
+
+            <HBox id="_IDGenHBox6">
+                <VBox
+                    id="_IDGenVBox12"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel11"
+                        text="State"
+                        required="true"
+                    />
+
+                    <Input
+                        id="state"
+                        width="250px"
+                        placeholder="State"
+                        liveChange="onNameChange"
+                    />
+                </VBox>
+                <VBox
+                    id="_IDGenVBox14"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel14"
+                        text="Company"
+                        required="true"
+                    />
+
+                    <ComboBox
+                        id="company"
+                        width="250px"
+                        required="true"
+                        items="{/companyTableSet}"
+                    >
+                        <core:Item
+                            id="items"
+                            key="{CompanyId},{CompanyDomain}"
+                            text="{CompanyName}"
+                        />
+                    </ComboBox>
+                </VBox>
+            </HBox>
+
+            <HBox id="_IDGenHBox8">
+                <VBox
+                    id="_IDGenVBox15"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel15"
+                        text="Employee ID"
+                        required="true"
+                    />
+
+                    <Input
+                        id="employeeId"
+                        width="250px"
+                        placeholder="Employee Id"
+                    />
+                </VBox>
+
+                <VBox id="_IDGenVBox16">
+                    <Label
+                        id="_IDGenLabel16"
+                        text="Company Mail ID"
+                        required="true"
+                    />
+
+                    <Input
+                        id="companyEmailId"
+                        width="250px"
+                        placeholder="Company Email id"
+                    />
+                </VBox>
+            </HBox>
+
+            <HBox id="_IDGenHBox9">
+                <VBox
+                    id="_IDGenVBox17"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <Label
+                        id="_IDGenLabel17"
+                        text="Password"
+                        required="true"
+                    />
+
+                    <Input
+                        id="password"
+                        width="250px"
+                        type="Password"
+                        placeholder="Password"
+                    />
+                </VBox>
+
+                <VBox id="_IDGenVBox18">
+                    <Label
+                        id="_IDGenLabel18"
+                        text="Confirm Password"
+                        required="true"
+                    />
+
+                    <Input
+                        id="cPassword"
+                        width="250px"
+                        type="Password"
+                        placeholder="Confirm Password"
+                    />
+                </VBox>
+            </HBox>
+
+            <HBox
+                id="_IDGenVBox19"
+                justifyContent="Center"
+                class="sapUiSmallMarginTop"
+            >
+                <Button
+                    id="_IDGenButton1"
+                    text="Submit"
+                    press="onRegisterEmployee"
+                />
+            </HBox>
+        </VBox>
+    </FlexBox>
+</core:FragmentDefinition>

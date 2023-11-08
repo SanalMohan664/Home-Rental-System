@@ -1,0 +1,87 @@
+<mvc:View
+    controllerName="com.applexus.technest.controller.bookingpage"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <ScrollContainer
+        id="_IDGenScrollContainer1"
+        width="100%"
+        height="100%"
+        vertical="true"
+        horizontal="true"
+    >
+        <Panel
+            id="panelForGridList"
+            backgroundDesign="Transparent"
+        >
+            <tnt:ToolHeader id="_IDGenToolHeader1">
+                <Button
+                    id="_IDGenButton4"
+                    icon="sap-icon://nav-back"
+                    press="onBackButtonPress"
+                />
+            </tnt:ToolHeader>
+            <VBox
+                id="vbox1"
+                alignItems="Center"
+                justifyContent="Center"
+            >
+                <Title
+                    id="title1"
+                    text="Booking page"
+                    level="H1"
+                    class="sapUiLargeMarginTop"
+                />
+                <FlexBox
+                    id="flexbox1"
+                    alignItems="Center"
+                    justifyContent="Center"
+                >
+                    <VBox
+                        id="vbox2"
+                        class="sapUiSmallMargin"
+                    >
+                        <Input
+                            id="Amount"
+                            placeholder="Amount"
+                            editable="false"
+                            value="5000"
+                        />
+                        <DatePicker
+                            id="DP1"
+                            valueFormat="dd.MM.yyyy"
+                            placeholder="Book From"
+                            change="onDateFromChange"
+                            required="true"
+                            minDate="{/minDate}"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <DatePicker
+                            id="DP2"
+                            valueFormat="dd.MM.yyyy"
+                            placeholder="Book To"
+                            change="onDateToChange"
+                            required="true"
+                            minDate="{/minnewDate}"
+                            class="sapUiSmallMarginTop"
+                        />
+
+                        <HBox
+                            id="hbox1"
+                            justifyContent="Center"
+                        >
+                            <Button
+                                id="btn1"
+                                text="Submit"
+                                press="onSubmitPress"
+                                class="sapUiSmallMarginTop"
+                            />
+                        </HBox>
+                    </VBox>
+                </FlexBox>
+            </VBox>
+        </Panel>
+    </ScrollContainer>
+</mvc:View>

@@ -1,0 +1,162 @@
+<mvc:View
+    controllerName="com.applexus.technest.controller.homepage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:u="sap.ui.unified"
+>
+    <ScrollContainer
+        id="_IDGenScrollContainer1"
+        width="100%"
+        height="100%" 
+        vertical="true"
+        horizontal="false"
+    >
+    <Page id="_IDGenPage1" backgroundDesign="Standard" title="Welcome to TechNest!"></Page>
+        <Panel
+            id="panelForGridList"
+            backgroundDesign="Transparent"
+        >
+        <HBox id="_IDGenHBox2" justifyContent="End">
+        <Button
+                            id="_IDGenButton2"
+                            icon="sap-icon://log"
+                            class="sapUiLargeMarginBegin"
+                            press="onLogoutPress"
+                        />
+                        </HBox>
+            <content>
+                <tnt:ToolHeader id="_IDGenToolHeader1"
+                >
+                    <HBox
+                        id="_IDGenHBox1"
+                        class="sapUiLargeMargin"
+                        justifyContent="Start"
+                    >
+                        <SearchField
+                            id="_IDGenSearchField1"
+                            liveChange="onSearch"
+                            placeholder="Search by place"
+                        />
+<!-- 
+                        <ComboBox
+                            id="_IDGenComboBox1"
+                            class="sapUiSmallMarginBeginEnd"
+                        >
+                            <items>
+                                <core:Item
+                                    id="_IDGenItem1"
+                                    key="001"
+                                    text="Furnishing status"
+                                />
+                                <core:Item
+                                    id="_IDGenItem2"
+                                    key="002"
+                                    text="Rooms"
+                                />
+                                <core:Item
+                                    id="_IDGenItem3"
+                                    key="003"
+                                    text="Persons"
+                                />
+                            </items>
+                        </ComboBox> -->
+                        <DatePicker
+                            id="DP"
+                            valueFormat="dd.MM.yyyy"
+                            placeholder="Select Date"
+                            change="onDateSelect"
+                            class="sapUiSmallMarginBeginEnd"
+                        />
+                         <Button
+                            id="_IDGenButton"
+                            icon="sap-icon://check-availability"
+                            class="sapUiSmallMarginBegin"
+                            press="onReadHouses"
+                        />
+                
+                        <Button
+                            id="_IDGenButton1"
+                            text="View Bookings"
+                            class="sapUiTinyMarginBegin"
+                            press="onBookingviewPress"
+                            icon="sap-icon://detail-view"
+                        />
+                    </HBox>
+                </tnt:ToolHeader>
+                <VBox
+                    id="_IDGenVBox2"
+                    alignItems="Center"
+                    class="sapUiLargeMarginTop"
+                >
+                    <Label
+                        id="_IDGenLabel2"
+                        text="EXPLORE HOMES"
+                        design="Bold"
+                        textAlign="Center"
+                        class="fontsize"
+                    />
+                    <Label
+                        id="_IDGenLabel3"
+                        text="Explore the trending homes near you"
+                        textAlign="Center"
+                        class="sapUiSmallMargin"
+                    />
+                </VBox>
+                <f:GridList
+                    id="gridList"
+                    items="{viewHomes>/Homes}"
+                    growing="true"
+                    growingThreshold="3" noDataText="Please enter a date and continue"
+                >
+                    <f:GridListItem id="_IDGenGridListItem1"
+                    class = "gridList">
+                        <VBox
+                            id="_IDGenVBox1"
+                            class="sapUiMediumMargin"
+                        >
+                            <layoutData>
+                                <FlexItemData
+                                    id="_IDGenFlexItemData1"
+                                    growFactor="1"
+                                    shrinkFactor="0"
+                                />
+                            </layoutData>
+
+                            <Title
+                                id="_IDGenTitle1"
+                                text="{title}"
+                                wrapping="true"
+                            />
+                            <Label
+                                id="_IDGenLabel1"
+                                text="{subtitle}"
+                                wrapping="true"
+                            />
+                            <Image
+                                id="_IDGenImage2"
+                                height="200px"
+                                width="200px"
+                                src="{viewHomes>images}"
+                            />
+                            <Label
+                                id="_IDGenLabel4"
+                                text="{viewHomes>DESCRIPTION}, {viewHomes>Place}"
+                                textAlign="Center"
+                            />
+                            <Button
+                                id="_IDGenButton3"
+                                text="View Details"
+                                class="sapUiLargeMarginBeginEnd"
+                                press="onViewdetailPress"
+                            />
+                        </VBox>
+                    </f:GridListItem>
+                </f:GridList>
+            </content>
+        </Panel>
+    </ScrollContainer>
+</mvc:View>

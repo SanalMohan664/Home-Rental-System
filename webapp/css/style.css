@@ -1,0 +1,37 @@
+.outer-bg{
+   
+    box-shadow: 2%;
+    background-size: cover;
+    background-image: url("../css/homepage.png");
+}
+.login-container{
+background-color: white;
+border-radius: 10px;
+width: 100%;
+max-width: 350px;
+margin: 0 auto;
+text-align: center;
+height: 350px;
+margin-top: 120px;
+}
+.text-color{
+    color: rgb(26, 25, 25);
+}
+
+.fontsize{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.iconTabBar{
+    align-items: center;
+    align-content: center;
+    .tabbedBar .sapMITBHead{
+        text-align:center;
+    }
+}
+.filter1{
+    padding-left: 100px;
+}
+
+

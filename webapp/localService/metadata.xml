@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZB14_GROUP2_MAIN_PROJECT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="companyTable" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CompanyId"/>
+                </Key>
+                <Property Name="CompanyId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Company ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Company Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phase" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Phase" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BuildingName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Building Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompanyDomain" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Company Domain" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="bookingTable" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BookingId"/>
+                </Key>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Booking ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LoginId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Login Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HouseCode" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="House Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Amount" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2" sap:unicode="false" sap:unit="CurrencyKey" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CurrencyKey" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="BookedFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booked From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookedTo" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booked To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingStatus" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Booking Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booking Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="userLogin" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="personal_email_id"/>
+                    <PropertyRef Name="password"/>
+                </Key>
+                <Property Name="personal_email_id" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="password" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="loginId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="role" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="houseMasterTable" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="HouseCode"/>
+                </Key>
+                <Property Name="HouseCode" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="House Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HouseOrFlat" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="House/Flat" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone No" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HouseNumber" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="House Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PersonalEmailId" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Personal EmailId" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AddressCode" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Address Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bedrooms" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Bedrooms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NumberOfPersons" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Number of Persons" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Furnishing" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Furnishing Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LoginId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Login Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RentAmount" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2" sap:unicode="false" sap:label="Rent Amt" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CurrencyKey" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AddressName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Place" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Place" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pincode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="District" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="District" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="houseItemTable" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="FileName"/>
+                    <PropertyRef Name="HouseCode"/>
+                </Key>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HouseCode" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="House Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ImageNumber" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Image No" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ImageType" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Image Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ImageData" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="employeeViewBookings" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LoginId"/>
+                </Key>
+                <Property Name="LoginId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Login Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Booking ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Amount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="12" sap:unicode="false" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CurrencyKey" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="BookedFrom" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Booked From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookedTo" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Booked To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Booking Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AddressName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Place" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Place" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone No" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="rentalProviderViewBooking" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BookingId"/>
+                </Key>
+                <Property Name="HouseCode" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="House Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Booking ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HouseNumber" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="House Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AddressName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookedFrom" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Booked From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookedTo" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Booked To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Booking Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingStatus" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Booking Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LoginId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Login Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PhoneNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Phone No" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="houseDescription" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="HOUSE_CODE"/>
+                </Key>
+                <Property Name="HOUSE_CODE" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DESCRIPTION" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Place" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Date" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="loginTable" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="login_id"/>
+                </Key>
+                <Property Name="login_id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="phone_number" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="personal_email_id" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="address_code" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="role" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="company_id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="employee_id" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="company_email_id" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="password" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="address_name" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="place" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pincode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="district" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="adminViewBookings" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BookingId"/>
+                </Key>
+                <Property Name="BookingDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booking Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookingId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Booking ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Employee ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Company Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OwnerName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AddressName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Place" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Place" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookedFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booked From" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BookedTo" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Booked To" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZB14_GROUP2_MAIN_PROJECT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="companyTableSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.companyTable" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="bookingTableSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.bookingTable" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="userLoginSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.userLogin" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="houseMasterTableSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.houseMasterTable" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="houseItemTableSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.houseItemTable" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="employeeViewBookingsSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.employeeViewBookings" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="rentalProviderViewBookingSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.rentalProviderViewBooking" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="houseDescriptionSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.houseDescription" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="loginTableSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.loginTable" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="adminViewBookingsSet" EntityType="ZB14_GROUP2_MAIN_PROJECT_SRV.adminViewBookings" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://trvlinuxvm09.applexus.com:8001/sap/opu/odata/sap/ZB14_GROUP2_MAIN_PROJECT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://trvlinuxvm09.applexus.com:8001/sap/opu/odata/sap/ZB14_GROUP2_MAIN_PROJECT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

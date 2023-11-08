@@ -1,0 +1,243 @@
+{
+  "_version": "1.17.0",
+  "sap.app": {
+    "id": "com.applexus.technest",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.1",
+      "toolsId": "b0fbefb8-d35c-4245-a348-cca20b052f18"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZB14_GROUP2_MAIN_PROJECT_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.71.55",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.applexus.technest.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "requests": {
+
+        "type": "sap.ui.model.json.JSONModel",
+  
+        "uri": "model/requests.json"
+  
+    }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.applexus.technest.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "Routelogin",
+          "pattern": ":?query:",
+          "target": [
+            "Targetlogin"
+          ]
+        },
+        {
+          "name": "Routeregistration",
+          "pattern": "registration",
+          "target": [
+            "Targetregistration"
+          ]
+        },
+        {
+          "name": "Routerentalproviderhome",
+          "pattern": "rentalproviderhome/{loginId}",
+          "target": [
+            "Targetrentalproviderhome"
+          ]
+        },
+        {
+          "name": "Routeemployeehome",
+          "pattern": "employeehome/{loginId}",
+          "target": [
+            "Targetemployeehome"
+          ]
+        },
+        {
+          "name": "Routeemployeeviewbooking",
+          "pattern": "employeeviewbooking/{loginId}",
+          "target": [
+            "Targetemployeeviewbooking"
+          ]
+        },
+        {
+          "name": "Routehomedetails",
+          "pattern": "employeehomedetails/{loginId}/{houseCode}",
+          "target": [
+            "Targetemployeehomedetails"
+          ]
+        },
+        {
+          "name": "Routebookingpage",
+          "pattern": "bookingpage/{loginId}/{houseCode}",
+          "target": [
+            "Targetbookingpage"
+          ]
+        },
+        {
+          "name": "Routeadminhome",
+          "pattern": "adminhome",
+          "target": [
+            "Targetadminhome"
+          ]
+        },
+        {
+          "name": "Routeotp",
+          "pattern": "otppage",
+          "target": [
+            "Targetotp"
+          ]
+        }
+        
+      ],
+      
+      "targets": {
+        "Targetlogin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "login",
+          "viewName": "login"
+        },
+        "Targetregistration": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "registration",
+          "viewName": "registration"
+        },
+        "Targetrentalproviderhome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "rentalproviderhome",
+          "viewName": "rentalproviderhome"
+        },
+        "Targetemployeehome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "homepage",
+          "viewName": "homepage"
+        },
+        "Targetemployeeviewbooking": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "employee-viewbookings",
+          "viewName": "employee-viewbookings"
+        },
+        "Targetemployeehomedetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "homedetails",
+          "viewName": "homedetails"
+        },
+        "Targetbookingpage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "bookingpage",
+          "viewName": "bookingpage"
+        },
+        "Targetadminhome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "adminhome",
+          "viewName": "adminhome"
+        },
+        "Targetotp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "otp",
+          "viewName": "otp"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.applexus.technest.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

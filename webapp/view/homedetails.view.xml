@@ -1,0 +1,145 @@
+<mvc:View controllerName="com.applexus.technest.controller.homedetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:tnt="sap.tnt"
+	xmlns:f="sap.f">
+    <ScrollContainer id="_IDGenScrollContainer1" 
+width="100%"
+height="100%"
+vertical="true"
+horizontal="true">
+
+	<Panel
+        id="panelForGridList"
+        backgroundDesign="Transparent"
+    >
+     <!-- <HBox id="_IDGenHBox" justifyContent="End">
+        <Button
+                            id="_IDGenButton2"
+                            icon="sap-icon://log"
+                            type="Reject"
+                            class="sapUiLargeMarginBegin"
+                            press="onLogoutPress"
+                        />
+                        </HBox> -->
+    <tnt:ToolHeader id="_IDGenToolHeader1">
+    <HBox id="_IDGenHBox1" justifyContent="End">
+    <Button id="_IDGenButton4" icon="sap-icon://nav-back"  press="onBackButtonPress" />
+    <Button id="_IDGenButton1"  press="onHomePress" icon="sap-icon://home" type="Accept" class="sapUiSmallMarginBeginEnd"> </Button>
+    </HBox>
+    	</tnt:ToolHeader>
+    <HBox id="_IDGenHBox2" >
+		
+        
+        <f:GridList
+            id="gridList"
+            items="{requests>/detail}"
+			width="100%"
+			class="sapUiLargeMargin"
+        >
+            <f:GridListItem id="_IDGenGridListItem1"
+            >
+                <VBox
+                    id="_IDGenVBox1"
+                    class="sapUiSmallMargin"
+                >
+                    <layoutData>
+                        <FlexItemData
+                            id="_IDGenFlexItemData1"
+                            growFactor="1"
+                            shrinkFactor="0"
+							
+                        />
+
+                    </layoutData>
+
+                    <Label
+                        id="_IDGenLabel1"
+                        text=""
+                        wrapping="true"
+                    />
+					<Image id="_IDGenImage1" src="{viewHomeDetails>/imgHome}"></Image>
+                       <Button  id="_IDGenButton3" text="Book Now" class="sapUiLargeMarginBeginEnd" press="onBooknowPress"></Button>
+                </VBox>
+            </f:GridListItem>
+        </f:GridList>
+         <f:GridList
+            id="gridList2"
+            items=""
+			width="100%"
+			class="sapUiLargeMargin"
+        >
+            <f:GridListItem id="_IDGenGridListItem2"
+            >
+                <VBox
+                    id="_IDGenVBox2"
+                    class="sapUiLargeMargin"
+                    
+                >
+                    <layoutData>
+                        <FlexItemData
+                            id="_IDGenFlexItemData2"
+                            growFactor="1"
+                            shrinkFactor="0"
+							
+                        />
+
+                    </layoutData>
+
+                    <Label
+                        id="AddressName"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="Street"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="Place"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="Pincode"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="Bedrooms"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="Furnishing"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="RentAmount"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="PhoneNumber"
+                        text=""
+                        wrapping="true"
+                    />
+                    <Label
+                        id="PersonalEmailId"
+                        text=""
+                        wrapping="true"
+                    />
+                </VBox>
+            </f:GridListItem>
+        </f:GridList>
+         <!-- <QuickViewCard id="quickVIewCard"></QuickViewCard> -->
+        
+        </HBox>
+		</Panel>
+        </ScrollContainer>
+
+
+</mvc:View>

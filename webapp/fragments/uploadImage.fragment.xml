@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+>
+    <Dialog
+        id="_IDGenDialog2"
+        title="Upload Image"
+        contentHeight="40%"
+    >
+        <VBox
+            id="_IDGenVBox2"
+            justifyContent="Center"
+            alignItems="Center"
+            class="sapUiSmallMarginTop"
+        >
+            <FlexBox
+                id="flexbox2"
+                alignItems="Center"
+                justifyContent="Center"
+            >
+                <VBox
+                    id="vbox3"
+                    class="sapUiSmallMargin"
+                >
+                <HBox id="_IDGenHBox5" >
+                    <u:FileUploader
+                        id="_IDGenFileUploader2"
+                        sameFilenameAllowed="false"
+                        placeholder="Select the image"
+                    />
+                    <Button
+                        id="button5"
+                        text="Upload"
+                        class="Center"
+                        press="uploadImage"
+                    />
+                    </HBox>
+                    <Button id="Finish" text="Finish" press="onFinishUpload"></Button>
+                </VBox>
+            </FlexBox>
+        </VBox>
+    </Dialog>
+</core:FragmentDefinition>

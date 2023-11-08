@@ -1,0 +1,359 @@
+<mvc:View
+    controllerName="com.applexus.technest.controller.adminhome"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+>
+<ScrollContainer id="_IDGenScrollContainer1" 
+width="100%"
+height="100%"
+vertical="true"
+horizontal="true">
+<Page id="_IDGenPage1" backgroundDesign="Standard" title="Hi Admin, Welcome to TechNest!"></Page>
+
+<HBox id="_IDGenHBox1" justifyContent="End">
+      <Button id="_IDGenButton2"  press="onLogoutPress" icon="sap-icon://log"  class="sapUiMediumMarginEnd"></Button>
+      </HBox>
+    <IconTabBar
+        id="iconTabBar"
+        
+        select="onSelect"
+        
+    >
+        <items>
+            <IconTabFilter
+                id="_IDGenIconTabFilter1"
+                text="View Requests"
+                key="requests"
+                icon="sap-icon://request"
+                class="sapUiLargeMarginEnd"
+            >
+                <Table
+                    id="tc1q"
+                    items="{adminRequests>/Requests}"
+                    ariaLabelledBy="title"
+                >
+                    <columns>
+                        <Column
+                            id="ccq1"
+                            width="5rem"
+                        >
+                            <Label
+                                id="qcl1"
+                                text="Name"
+                            />
+                        </Column>
+
+                        <Column
+                            id="ccq7"
+                            width="5rem"
+                        >
+                            <Label
+                                id="lfcv8"
+                                text="Address"
+                            />
+                        </Column>
+
+                        <Column
+                            id="Ccqo2"
+                            width="5rem"
+                        >
+                            <Label
+                                id="Lcq2"
+                                text="Phone Number"
+                            />
+                        </Column>
+
+                        <Column
+                            id="cqcg5"
+                            width="5rem"
+                        >
+                            <Label
+                                id="c1cqg5"
+                                text="Email id"
+                            />
+                        </Column>
+
+                        <Column
+                            id="cgcq5"
+                            width="5rem"
+                        >
+                            <Label
+                                id="cc1gq5"
+                                text="Approve/Reject"
+                            />
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem id="vteqm1">
+                            <cells>
+                                <Text
+                                    id="vcqt1"
+                                    text="{adminRequests>name}"
+                                />
+                            </cells>
+
+                            <cells>
+                                <Text
+                                    id="vcql2"
+                                    text="{adminRequests>address_name}"
+                                />
+                            </cells>
+
+                            <cells>
+                                <Text
+                                    id="vccq3"
+                                    text="{adminRequests>phone_number}"
+                                />
+                            </cells>
+
+                            <cells>
+                                <Text
+                                    id="personal_email_id"
+                                    text="{adminRequests>personal_email_id}"
+                                />
+                            </cells>
+
+                            <cells>
+                                <HBox id="cellButton">
+                                    <Button
+                                        id="bggb1"
+                                        activeIcon=""
+                                        enabled="true"
+                                        icon="sap-icon://accept"
+                                        text="Approve"
+                                        textDirection="Inherit"
+                                        type="Accept"
+                                        width="100%"
+                                        press="onApprovePress"
+                                    />
+
+                                    <Button
+                                        id="by1"
+                                        activeIcon=""
+                                        enabled="true"
+                                        icon="sap-icon://decline"
+                                        text="Reject"
+                                        textDirection="Inherit"
+                                        type="Reject"
+                                        width="100%"
+                                        press="onRejectPress"
+                                        class="sapUiTinyMarginBegin"
+                                    />
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </IconTabFilter>
+          
+            <IconTabFilter
+                id="_IDGenIconTabFilter2"
+                text="View Bookings"
+                icon="sap-icon://detail-view"
+                key="statistics"
+            >
+                <Table
+                    id="_IDGenTable1"
+                    items="{/adminViewBookingsSet}"
+                    ariaLabelledBy="title"
+                >
+                    <columns>
+                        <Column
+                            id="_IDGenColumn1"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel1"
+                                text="Employee Id"
+                            />
+                        </Column>
+
+                        <Column
+                            id="_IDGenColumn2"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel2"
+                                text="Employee Name"
+                            />
+                        </Column>
+
+                        <Column
+                            id="_IDGenColumn3"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel3"
+                                text="Company Name"
+                            />
+                        </Column>
+
+                        <Column
+                            id="_IDGenColumn4"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel4"
+                                text="Booked Address"
+                            />
+                        </Column>
+
+                        <Column
+                            id="_IDGenColumn5"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel5"
+                                text="Owner Name"
+                            />
+                        </Column>
+                             <Column
+                            id="_IDGenColumn6"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel6"
+                                text="Booked From"
+                            />
+                        </Column>
+                             <Column
+                            id="_IDGenColumn7"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel7"
+                                text="Booked To"
+                            />
+                        </Column>
+                        <Column
+                            id="_IDGenColumn8"
+                            width="5rem"
+                        >
+                            <Label
+                                id="_IDGenLabel8"
+                                text="Booking Date"
+                            />
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem1">
+                            <cells>
+                                <Text
+                                    id="_IDGenText1"
+                                    text="{EmployeeId}"
+                                />
+                            </cells>
+
+                            <cells>
+                                <Text
+                                    id="_IDGenText2"
+                                    text="{Name}"
+                                />
+                            </cells>
+
+                            <cells>
+                                <Text
+                                    id="_IDGenText3"
+                                    text="{CompanyName}"
+                                />
+                            </cells>
+
+                            <cells>
+                                <Text
+                                    id="_IDGenText4"
+                                    text="{AddressName}"
+                                />
+                            </cells>
+                            <cells>
+                                <Text
+                                    id="_IDGenText5"
+                                    text="{OwnerName}"
+                                />
+                            </cells>
+                            <cells>
+                                <Text
+                                    id="_IDGenText6"
+                                    text="{ path: 'BookedFrom', formatter: '.customFormatter.formatDate'}"
+                                    
+                                />
+                            </cells>
+                            <cells>
+                                <Text
+                                    id="_IDGenText7"
+                                    text="{ path: 'BookedTo', formatter: '.customFormatter.formatDate'}"
+                                />
+                            </cells>
+                            <cells>
+                                <Text
+                                    id="_IDGenText8"
+                                    text="{ path: 'BookingDate', formatter: '.customFormatter.formatDate'}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </IconTabFilter>
+            <IconTabFilter
+                id="_IDGenIconTabFilter3"
+                text="Add Company Details"
+                icon="sap-icon://add"
+                key="info"
+            >
+                <FlexBox
+                    id="flexbox1"
+                    alignItems="Center"
+                    justifyContent="Center"
+                    class="sapUiMediumMarginTop login-container"
+                >
+                    <VBox
+                        id="vbox2"
+                        class="sapUiMediumMargin"
+                    >
+                        <Input
+                            id="companyname"
+                            placeholder="Company Name"
+                            width="100%"
+                            class="sapUiMediumMarginTop"
+                        />
+                        <Input
+                            id="building"
+                            placeholder="Building Name"
+                            width="100%"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <Input
+                            id="phase"
+                            placeholder="Phase"
+                            width="100%"
+                            class="sapUiSmallMarginTop"
+                        />
+                        
+                        <Input
+                            id="domain"
+                            placeholder="Domain"
+                            width="100%"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <HBox
+                            id="hbox1"
+                            justifyContent="Center"
+                        >
+                            <Button
+                                id="btn1"
+                                text="Submit"
+                                press="onAddcompanyPress"
+                                class="sapUiMediumMargin"
+                            />
+                        </HBox>
+                    </VBox>
+                </FlexBox>
+            </IconTabFilter>
+        </items>
+    </IconTabBar>
+    </ScrollContainer>
+</mvc:View>
